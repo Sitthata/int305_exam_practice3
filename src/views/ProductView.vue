@@ -7,6 +7,8 @@ import QueryList from "../components/QueryList.vue";
 import ProductList from "../components/ProductList.vue";
 import { query } from "firebase/firestore";
 import { where } from "firebase/firestore";
+import { doc } from "firebase/firestore";
+import { getDoc } from "firebase/firestore";
 
 const category = ref();
 const products = ref([]);
@@ -29,6 +31,8 @@ async function getProducts() {
     id: doc.id,
     ...doc.data(),
   }));
+  const firstDoc = doc(db, 'myproducts', products.value[0].id)
+  console.log(firstDoc)
   console.log(products.value);
 }
 

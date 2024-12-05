@@ -1,7 +1,7 @@
 <script setup>
 import { RouterView } from "vue-router";
 import { ref, onMounted } from "vue";
-import { query, collection, getDocs } from "firebase/firestore";
+import { query, collection, getDocs, doc } from "firebase/firestore";
 import db from "./firebase/init.js";
 import CategoryList from "./components/CategoryList.vue";
 
